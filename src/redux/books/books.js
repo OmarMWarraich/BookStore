@@ -11,28 +11,15 @@ export const REMOVE_BOOK = (book) => ({
   payload: book,
 });
 
-export const addBook = (book) => (dispatch) => {
-  dispatch(ADD_BOOK(book));
-};
-
-export const removeBook = (book) => (dispatch) => {
-  dispatch(REMOVE_BOOK(book));
-};
-
 // Language: javascript
 // Path: src/redux/books/books.js
-const initialState = {
-  books: [],
-};
+const books = [];
 
-const booksReducer = (state = initialState, action) => {
+const booksReducer = (state = books, action) => {
   switch (action.type) {
-    case ADD_BOOK:
-      return {
-        ...state,
-        books: [...state.books, action.payload],
-      };
-    case REMOVE_BOOK:
+    case ADDBOOK:
+      return state.concat(action.payload);
+    case REMOVEBOOK:
       return {
         ...state,
         books: state.books.filter((book) => book.id !== action.payload.id),
