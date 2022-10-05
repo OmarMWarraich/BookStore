@@ -45,10 +45,7 @@ const booksReducer = (state = books, action) => {
     case ADDBOOK:
       return state.concat(action.payload);
     case REMOVEBOOK:
-      return {
-        ...state,
-        books: state.books.filter((book) => book.id !== action.payload.id),
-      };
+      return state.filter((book) => book.id !== action.payload.id);
     default:
       return state;
   }
