@@ -4,15 +4,9 @@ export const checkStatus = () => ({
   type: CHECK_STATUS,
 });
 
-export const checkStatusAction = () => (dispatch) => {
-  dispatch(checkStatus());
-};
+const categories = [];
 
-const initialState = {
-  categories: [],
-};
-
-const categoriesReducer = (state = initialState, action) => {
+const categoriesReducer = (state = categories, action) => {
   switch (action.type) {
     case CHECK_STATUS:
       return 'UNDER CONSTRUCTION';
