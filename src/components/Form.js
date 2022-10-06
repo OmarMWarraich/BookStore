@@ -50,8 +50,8 @@ const Form = () => {
       <button
         id="add-book"
         type="button"
-        onClick={() => {
-          dispatch(addBook({
+        onClick={async () => {
+          await dispatch(addBook({
             id: uuidv4(),
             title: bookTitle,
             author: bookAuthor,
@@ -60,6 +60,7 @@ const Form = () => {
           setBookTitle('');
           setBookAuthor('');
           setBookCategory('');
+          await window.location.reload();
         }}
       >
         Add Book

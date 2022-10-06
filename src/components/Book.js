@@ -15,7 +15,16 @@ const Book = (props) => {
         <div className="book-author">{book.author}</div>
         <div className="book-actions">
           <button type="button" className="book-actions-btn">Comments</button>
-          <button type="button" className="book-actions-btn" onClick={() => { dispatch(removeBook(book)); }}>Remove</button>
+          <button
+            type="button"
+            className="book-actions-btn"
+            onClick={async () => {
+              await dispatch(removeBook(book));
+              await window.location.reload();
+            }}
+          >
+            Remove
+          </button>
           <button type="button" className="book-actions-btn">Edit</button>
         </div>
       </div>
