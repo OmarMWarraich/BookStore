@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { ADD_BOOK } from '../redux/books/books';
+import { addBook } from '../redux/books/booksAPI';
 
 const Form = () => {
   const dispatch = useDispatch();
   const [bookTitle, setBookTitle] = useState('');
   const [bookAuthor, setBookAuthor] = useState('');
+  const [bookCategory, setBookCategory] = useState('');
 
   return (
     <form>
@@ -29,17 +30,37 @@ const Form = () => {
           setBookAuthor(e.target.value);
         }}
       />
+      <select
+        id="book-category"
+        value={bookCategory}
+        onChange={(e) => {
+          setBookCategory(e.target.value);
+        }}
+      >
+        <option value="DEFAULT">--select an option--</option>
+        <option value="Action">Action</option>
+        <option value="Biography">Biography</option>
+        <option value="History">History</option>
+        <option value="Horror">Horror</option>
+        <option value="Kids">Kids</option>
+        <option value="Learning">Learning</option>
+        <option value="Sci-Fi">Sci-Fi</option>
+      </select>
+
       <button
         id="add-book"
         type="button"
-        onClick={() => {
-          dispatch(ADD_BOOK({
+        onClick={async () => {
+          await dispatch(addBook({
             id: uuidv4(),
             title: bookTitle,
             author: bookAuthor,
+            category: bookCategory,
           }));
           setBookTitle('');
           setBookAuthor('');
+          setBookCategory('');
+          await window.location.reload();
         }}
       >
         Add Book

@@ -1,9 +1,13 @@
-const ADDBOOK = 'ADD_BOOK';
-const REMOVEBOOK = 'REMOVE_BOOK';
+export const ADDBOOK = 'bookstore/books/ADD_BOOK';
+export const REMOVEBOOK = 'bookstore/books/REMOVE_BOOK';
+export const GETBOOKS = 'bookstore/books/GETBOOKS';
 
-export const ADD_BOOK = (book) => ({
+export const ADD_BOOK = (id, title, author, category) => ({
   type: ADDBOOK,
-  payload: book,
+  id,
+  title,
+  author,
+  category,
 });
 
 export const REMOVE_BOOK = (book) => ({
@@ -11,41 +15,16 @@ export const REMOVE_BOOK = (book) => ({
   payload: book,
 });
 
-// Language: javascript
-// Path: src/redux/books/books.js
-const books = [
-  {
-    id: 1,
-    title: 'The Hunger Games',
-    genres: ['Action', 'Adventure', 'Sci-Fi'],
-    author: 'Suzanne Collins',
-    progress: 64,
-    chapter: 'Chapter 17',
-  },
-  {
-    id: 2,
-    title: 'Dune',
-    genres: ['Sci-Fi', 'Fantasy'],
-    author: 'Frank Herbert',
-    progress: 8,
-    chapter: 'Chapter 3: "A Lesson Learned"',
-  },
-  {
-    id: 3,
-    title: 'Capital in the Twenty-First Century',
-    genres: ['Economics', 'Non-Fiction'],
-    author: 'Suzanne Collins',
-    progress: 0,
-    chapter: 'Introduction',
-  },
-];
-
-const booksReducer = (state = books, action) => {
+const booksReducer = (state = [], action) => {
   switch (action.type) {
-    case ADDBOOK:
+    case `${ADDBOOK}/fulfilled`:
       return state.concat(action.payload);
-    case REMOVEBOOK:
+    case `${REMOVEBOOK}/fulfilled`:
       return state.filter((book) => book.id !== action.payload.id);
+    case `${GETBOOKS}/fulfilled`:
+      return [
+        ...action.payload,
+      ];
     default:
       return state;
   }
