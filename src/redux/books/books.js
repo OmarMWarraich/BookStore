@@ -1,10 +1,13 @@
-const ADDBOOK = 'ADD_BOOK';
-const REMOVEBOOK = 'REMOVE_BOOK';
+export const ADDBOOK = 'bookstore/books/ADD_BOOK';
+export const REMOVEBOOK = 'bookstore/books/REMOVE_BOOK';
 export const GETBOOKS = 'bookstore/books/GETBOOKS';
 
-export const ADD_BOOK = (book) => ({
+export const ADD_BOOK = (id, title, author, category) => ({
   type: ADDBOOK,
-  payload: book,
+  id,
+  title,
+  author,
+  category,
 });
 
 export const REMOVE_BOOK = (book) => ({
@@ -14,9 +17,9 @@ export const REMOVE_BOOK = (book) => ({
 
 const booksReducer = (state = [], action) => {
   switch (action.type) {
-    case ADDBOOK:
+    case `${ADDBOOK}/fulfilled`:
       return state.concat(action.payload);
-    case REMOVEBOOK:
+    case `${REMOVEBOOK}/fulfilled`:
       return state.filter((book) => book.id !== action.payload.id);
     case `${GETBOOKS}/fulfilled`:
       return [
