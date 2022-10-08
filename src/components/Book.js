@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 import { CircleLoader } from 'react-spinners';
-import { removeBook } from '../redux/books/booksAPI';
+// import { removeBook } from '../redux/books/booksAPI';
 
 const Book = (props) => {
   const { book } = props;
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   return (
     <div className="book">
@@ -20,7 +20,7 @@ const Book = (props) => {
             type="button"
             className="book-actions-btn"
             onClick={async () => {
-              await dispatch(removeBook(book));
+              // await dispatch(removeBook(book));
               await window.location.reload();
             }}
           >
