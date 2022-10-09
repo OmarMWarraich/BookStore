@@ -57,6 +57,7 @@
   color: #4386bf;
   border: none;
   background-color: #fff;
+  cursor: pointer;
 }
 
 .book-actions-btn:first-child {
@@ -179,4 +180,9 @@ form h2 {
   border-radius: 3px;
   font-family: 'RobotoSlab', serif;
   width: 12.2rem !important;
+  cursor: pointer;
+}
+
+.check {
+  cursor: pointer;
 }

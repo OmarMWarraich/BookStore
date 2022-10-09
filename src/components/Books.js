@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchBooks } from '../redux/books/booksAPI';
+import { GETBOOKS } from '../redux/books/bookSlice';
 import Book from './Book';
 import Form from './Form';
 
@@ -8,9 +8,9 @@ const Books = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchBooks());
+    dispatch(GETBOOKS());
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dispatch]);
+  }, []);
   const BooksList = useSelector((state) => state.books);
   return (
     <div className="books">

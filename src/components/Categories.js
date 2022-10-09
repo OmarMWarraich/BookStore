@@ -3,12 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { checkStatus } from '../redux/categories/categories';
 
 const Categories = () => {
-  const categories = useSelector((state) => state.categories);
   const dispatch = useDispatch();
 
+  const categories = useSelector((state) => state.categories);
   return (
     <div>
-      <button type="button" onClick={() => { dispatch(checkStatus()); }}>
+      <button className="check" type="button" onClick={() => { dispatch(checkStatus()); }}>
         Check Status
       </button>
       <p>{categories}</p>

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { CircleLoader } from 'react-spinners';
-import { removeBook } from '../redux/books/booksAPI';
+import { REMOVEBOOK } from '../redux/books/bookSlice';
 
 const Book = (props) => {
   const { book } = props;
@@ -20,7 +20,7 @@ const Book = (props) => {
             type="button"
             className="book-actions-btn"
             onClick={async () => {
-              await dispatch(removeBook(book));
+              await dispatch(REMOVEBOOK(book));
               await window.location.reload();
             }}
           >
