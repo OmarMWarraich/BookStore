@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../redux/books/booksAPI';
+import { ADDBOOK } from '../redux/books/bookSlice';
 
 const Form = () => {
   const dispatch = useDispatch();
@@ -53,7 +53,7 @@ const Form = () => {
           id="add-book"
           type="button"
           onClick={async () => {
-            await dispatch(addBook({
+            await dispatch(ADDBOOK({
               id: uuidv4(),
               title: bookTitle,
               author: bookAuthor,

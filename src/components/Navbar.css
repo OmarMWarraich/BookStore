@@ -39,6 +39,7 @@ ul li:last-of-type {
   color: #121212;
   letter-spacing: 1.9px;
   font-size: 0.813rem;
+  cursor: pointer;
 }
 
 .fa-sharp {
