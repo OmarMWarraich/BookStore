@@ -1,0 +1,188 @@
+.book {
+  font-size: 14px;
+  line-height: 1.5;
+  display: flex;
+  justify-content: space-between;
+  color: #333;
+  background-color: #fff;
+  padding: 15px;
+  margin: 0 6.25rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  height: 10.625rem;
+  margin-bottom: 0.938rem;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.3rem;
+}
+
+.book-category {
+  margin-top: 2rem;
+  margin-left: 1.688rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  opacity: 50%;
+}
+
+.book-title {
+  margin-top: 0.25rem;
+  margin-left: 1.688rem;
+  font-size: 1.375rem;
+  font-family: 'RobotoSlab', serif;
+  font-weight: 700;
+  height: 1.813rem;
+}
+
+.book-author {
+  margin-top: 0.25rem;
+  margin-left: 1.688rem;
+  font-size: 0.875rem;
+  font-family: 'RobotoSlab', serif;
+  font-weight: 300;
+  color: #4386bf;
+}
+
+.book-actions-btn {
+  margin-top: 1.313rem;
+  margin-right: 1.25rem;
+  font-family: 'RobotoSlab', serif;
+  font-weight: 300;
+  font-size: 0.875rem;
+  color: #4386bf;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.book-actions-btn:first-child {
+  margin-left: 1.45rem;
+}
+
+.book-actions-btn:nth-child(2) {
+  border-left: solid 1px #e8e8e8;
+  border-right: solid 1px #e8e8e8;
+  padding: 0 1.25rem;
+}
+
+.book-progress {
+  display: flex;
+  margin-top: 3rem;
+  height: 80px;
+  border-right: 2px solid #e8e8e8;
+  padding-right: 5rem;
+  margin-left: 3rem;
+}
+
+.book-progress-percentage-text {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+
+  /* margin-right: 2.5rem; */
+  margin-left: 1rem;
+  color: #121212;
+}
+
+.book-progress-percentage-text .percentage {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.book-progress-percentage-text .completion {
+  font-size: 0.875rem;
+  font-weight: 400;
+  opacity: 50%;
+}
+
+.book-chapter {
+  margin-right: 5rem;
+  margin-top: 2rem;
+  color: #121212;
+  font-weight: 300;
+  padding-left: 2rem;
+}
+
+.book-chapter-title {
+  font-family: 'RobotoSlab', serif;
+  font-size: 0.875rem;
+  opacity: 50%;
+}
+
+.book-chapter-name {
+  font-size: 1rem;
+  margin-top: 0.7rem;
+}
+
+.book-chapter-update {
+  font-size: 0.875rem;
+  margin-top: 1.3rem;
+  color: #fff;
+  padding: 0.6rem 1.75rem;
+  background-color: #4386bf;
+  border: none;
+  border-radius: 3px;
+  font-family: 'RobotoSlab', serif;
+}
+
+.form-container {
+  margin: 0 6.25rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.form-container hr {
+  margin-top: 2rem;
+  color: #e8e8e8;
+  opacity: 50%;
+}
+
+form h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 1.813rem;
+  color: #888;
+  letter-spacing: -0.18px;
+}
+
+#book-title,
+#book-author,
+#book-category,
+#add-book {
+  height: 2.813rem;
+  font-size: 1rem;
+}
+
+#book-title,
+#book-author {
+  width: 15.625rem;
+  margin-right: 2.25rem;
+}
+
+#book-category {
+  width: 10.625rem;
+  background-color: #fff;
+  border: 1px solid #121212;
+  opacity: 50%;
+  margin-right: 2.25rem;
+}
+
+#add-book {
+  font-size: 0.875rem;
+  color: #fff;
+  padding: 0 1.75rem;
+  background-color: #4386bf;
+  border: none;
+  border-radius: 3px;
+  font-family: 'RobotoSlab', serif;
+  width: 12.2rem !important;
+  cursor: pointer;
+}
+
+.check {
+  cursor: pointer;
+}
