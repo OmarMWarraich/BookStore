@@ -13,7 +13,7 @@
 
 ## Live Demo 
 
-Coming Soon
+[Click Me](https://boostore-ova.netlify.app/)
 
 ## Getting Started
 
