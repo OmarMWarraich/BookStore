@@ -8,6 +8,9 @@
 
 - React.
 - Redux.
+- React Router.
+- React spinners.
+- uuid
 - Eslint.
 - Stylelint.
 
